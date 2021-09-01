@@ -46,7 +46,8 @@ function alici(connection) {
                         }
                     ]).then((cavab) => {
                         console.log('cavab:' + cavab.product)
-                        connection.query(`select * from auctions where id = '${cavab.product}'`, (err, result) => {
+                        
+                        connection.query(`select * from auctions where id = '${cavab.product}' and category = '${answer.category}'`, (err, result) => {
                             if (err) {
                                 console.log('err', err)
                             }
